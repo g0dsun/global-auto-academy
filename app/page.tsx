@@ -104,7 +104,7 @@ function LandingContent() {
       <nav className="fixed top-0 left-0 right-0 z-50 px-5 h-14 bg-black/90 backdrop-blur-xl border-b border-white/5 flex justify-between items-center">
         <div className="text-sm font-black">GLOBAL <span className="text-[#ff4d4d]">AUTO</span> ACADEMY</div>
         <div className="flex gap-2 items-center">
-          <span className="text-xs text-[#aaa] hidden sm:inline">☎ 010-0000-0000</span>
+          <span className="text-xs text-[#aaa] hidden sm:inline">☎ 010-4910-9468</span>
           <button onClick={scrollToForm} className="bg-[#ff4d4d] text-white text-xs font-bold px-4 py-2 rounded-md">무료 상담</button>
         </div>
       </nav>
@@ -216,7 +216,7 @@ function LandingContent() {
           <p className="text-sm text-[#888] text-center mb-6">24시간 이내 전문 상담사가 연락드립니다</p>
           <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
             <div><label className="block text-xs font-bold text-[#aaa] mb-1">이름</label><input type="text" placeholder="홍길동" required minLength={2} maxLength={20} className="w-full px-4 py-3 border border-[#222] rounded-lg text-sm bg-[#1a1a1a] text-white outline-none focus:border-[#ff4d4d] transition-colors placeholder:text-[#444]" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} /></div>
-            <div><label className="block text-xs font-bold text-[#aaa] mb-1">연락처</label><input type="tel" placeholder="010-0000-0000" required className="w-full px-4 py-3 border border-[#222] rounded-lg text-sm bg-[#1a1a1a] text-white outline-none focus:border-[#ff4d4d] transition-colors placeholder:text-[#444]" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} /></div>
+            <div><label className="block text-xs font-bold text-[#aaa] mb-1">연락처</label><input type="tel" placeholder="010-4910-9468" required className="w-full px-4 py-3 border border-[#222] rounded-lg text-sm bg-[#1a1a1a] text-white outline-none focus:border-[#ff4d4d] transition-colors placeholder:text-[#444]" value={form.phone} onChange={(e) => setForm({ ...form, phone: e.target.value })} /></div>
             <div><label className="block text-xs font-bold text-[#aaa] mb-1">연령대</label><select required className="w-full px-4 py-3 border border-[#222] rounded-lg text-sm bg-[#1a1a1a] text-white outline-none focus:border-[#ff4d4d] transition-colors appearance-none" value={form.ageGroup} onChange={(e) => setForm({ ...form, ageGroup: e.target.value })}><option value="">선택해주세요</option><option>20대</option><option>30대</option><option>40대</option><option>50대</option><option>60대 이상</option></select></div>
             <div><label className="block text-xs font-bold text-[#aaa] mb-1">관심 분야</label><select required className="w-full px-4 py-3 border border-[#222] rounded-lg text-sm bg-[#1a1a1a] text-white outline-none focus:border-[#ff4d4d] transition-colors appearance-none" value={form.interest} onChange={(e) => setForm({ ...form, interest: e.target.value })}><option value="">선택해주세요</option><option>교육만 관심</option><option>교육 + 파트너십</option><option>파트너십만 관심</option><option>기타 문의</option></select></div>
             <label className="flex items-start gap-2 mt-1"><input type="checkbox" className="mt-1 accent-[#ff4d4d]" checked={form.agreed} onChange={(e) => setForm({ ...form, agreed: e.target.checked })} /><span className="text-xs text-[#888]"><a href="/privacy" target="_blank" className="underline text-[#ff4d4d]">개인정보 수집 및 이용</a>에 동의합니다 (필수)</span></label>
@@ -228,8 +228,8 @@ function LandingContent() {
       </section>
 
       <footer className="py-8 px-5 text-center border-t border-[#111] bg-black">
-        <p className="text-xs text-[#444]">© 2026 Global Auto Academy | 서울특별시 강남구 | 사업자등록번호 000-00-00000</p>
-        <p className="text-xs text-[#444] mt-1">문의: 010-0000-0000 | info@globalauto.kr</p>
+        <p className="text-xs text-[#444]">© 2026 Global Auto Academy | 경기도 부천시 상동로 186 | 사업자등록번호 136-09-84466</p>
+        <p className="text-xs text-[#444] mt-1">문의: 010-4910-9468 | info@globalauto.kr</p>
       </footer>
 
       <button onClick={scrollToForm} className="fixed bottom-5 left-1/2 -translate-x-1/2 z-50 bg-[#ff4d4d] text-white text-sm font-extrabold px-7 py-3.5 rounded-full shadow-[0_4px_20px_rgba(255,77,77,0.5)] btn-pulse">📞 무료 상담 신청</button>

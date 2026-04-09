@@ -36,7 +36,7 @@ export default function Privacy() {
       </div>
 
       <div className="mt-12 pt-6 border-t border-[#222]">
-        <p className="text-xs text-[#555]">© 2026 Global Auto Academy | 서울특별시 강남구</p>
+        <p className="text-xs text-[#555]">© 2026 Global Auto Academy | 경기도 부천시 상동로 186</p>
       </div>
     </div>
   );
