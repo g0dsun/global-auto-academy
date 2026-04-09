@@ -1,11 +1,15 @@
 @import "tailwindcss";
 
 :root {
-  --red: #ff4d4d;
-  --red-dark: #e63e3e;
-  --navy: #1a1a2e;
-  --dark: #111;
-  --darker: #0a0a0a;
+  --primary: #3b82f6;
+  --primary-light: #60a5fa;
+  --bg: #18181b;
+  --bg-card: #27272a;
+  --bg-elevated: #1e1e24;
+  --border: #3f3f46;
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --text-dim: #71717a;
 }
 
 @keyframes fadeUp {
@@ -35,18 +39,10 @@
 }
 
 body {
-  background: var(--dark);
-  color: #fff;
+  background: var(--bg);
+  color: var(--text);
   font-family: -apple-system, 'Apple SD Gothic Neo', 'Malgun Gothic', sans-serif;
   overflow-x: hidden;
-}
-
-.gradient-text {
-  background: linear-gradient(135deg, #4f8fff, #7c5cff, #4f8fff);
-  background-size: 200% auto;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: shimmer 3s linear infinite;
 }
 
 .bar-animate {
