@@ -79,6 +79,8 @@ function LandingContent() {
         (window as any).fbq?.("track", "Lead");
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         (window as any).gtag?.("event", "generate_lead", { event_category: "form" });
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        (window as any).karrotPixel?.track("CompleteRegistration");
       }
     } catch (err) {
       setStatus("error");

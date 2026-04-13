@@ -40,6 +40,14 @@ export default function RootLayout({
             </Script>
           </>
         )}
+        {/* Danggeun Market Pixel */}
+        <Script
+          src="https://karrot-pixel.business.daangn.com/karrot-pixel.js"
+          strategy="afterInteractive"
+        />
+        <Script id="karrot-pixel" strategy="afterInteractive">
+          {`window.karrotPixel.init('1776051577881938001');window.karrotPixel.track('ViewPage');`}
+        </Script>
       </head>
       <body>{children}</body>
     </html>
