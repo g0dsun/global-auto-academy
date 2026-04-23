@@ -47,7 +47,9 @@ export async function POST(req: NextRequest) {
     );
   }
 
-  const message = `🚗 *신규 상담 문의*\n\n👤 이름: ${name}\n📞 연락처: ${phone}\n🎂 연령대: ${ageGroup}\n💼 관심분야: ${interest}\n📊 UTM: ${utmSource || "-"} / ${utmMedium || "-"} / ${utmCampaign || "-"}`;
+  const plain = `🚗 신규 상담 문의\n\n👤 이름: ${name}\n📞 연락처: ${phone}\n🎂 연령대: ${ageGroup}\n💼 관심분야: ${interest}\n📊 UTM: ${utmSource || "-"} / ${utmMedium || "-"} / ${utmCampaign || "-"}`;
+  const escapeHtml = (s: string) => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  const telegramHtml = `🚗 <b>신규 상담 문의</b>\n\n👤 이름: ${escapeHtml(name)}\n📞 연락처: ${escapeHtml(phone)}\n🎂 연령대: ${escapeHtml(ageGroup)}\n💼 관심분야: ${escapeHtml(interest)}\n📊 UTM: ${escapeHtml(utmSource || "-")} / ${escapeHtml(utmMedium || "-")} / ${escapeHtml(utmCampaign || "-")}`;
 
   const notifications = [];
 
@@ -57,7 +59,7 @@ export async function POST(req: NextRequest) {
       fetch(process.env.DISCORD_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ content: message.replace(/\*/g, "**") }),
+        body: JSON.stringify({ content: plain.replace("신규 상담 문의", "**신규 상담 문의**") }),
       }).catch((e) => console.error("Discord error:", e))
     );
   }
@@ -70,8 +72,8 @@ export async function POST(req: NextRequest) {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           chat_id: process.env.TELEGRAM_CHAT_ID,
-          text: message,
-          parse_mode: "Markdown",
+          text: telegramHtml,
+          parse_mode: "HTML",
         }),
       }).catch((e) => console.error("Telegram error:", e))
     );
